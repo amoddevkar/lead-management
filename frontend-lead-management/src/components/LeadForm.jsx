@@ -94,8 +94,10 @@ const LeadForm = () => {
             value={leadData.firstName}
             onChange={handleChange}
             pattern="[a-z A-z]*"
+            title="Only alphabets are allowed"
             required
           />
+          <div class="form-text">Only alphabets are allowed</div>
         </div>
         <div className="mb-2">
           <label className="form-label">Last Name:</label>
@@ -107,8 +109,10 @@ const LeadForm = () => {
             value={leadData.lastName}
             onChange={handleChange}
             pattern="[a-z A-z]*"
+            title="Only alphabets are allowed"
             required
           />
+          <div class="form-text">Only alphabets are allowed</div>
         </div>
         <div className="mb-2">
           <label className="form-label">Mobile No:</label>
@@ -120,8 +124,10 @@ const LeadForm = () => {
             value={leadData.mobileNo}
             onChange={handleChange}
             pattern="[0-9]{10}"
+            title="Only numbers are allowed"
             required
           />
+          <div class="form-text">Only numbers are allowed</div>
         </div>
 
         <div className="mb-2">
@@ -150,7 +156,6 @@ const LeadForm = () => {
 
           <div className="col">
             <input
-              //className="form-control"
               type="text"
               name="city"
               value={leadData.city}
@@ -162,7 +167,6 @@ const LeadForm = () => {
           </div>
           <div className="col">
             <input
-              //className="form-control"
               type="text"
               name="state"
               value={leadData.state}
@@ -199,7 +203,6 @@ const LeadForm = () => {
               className="form-control"
               type="date"
               name="preferredDate"
-              //value={leadData.preferredDate}
               onChange={handleDateChange}
               ref={dateInputRef}
               required

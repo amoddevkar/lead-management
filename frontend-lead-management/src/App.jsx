@@ -5,18 +5,24 @@ import LeadList from "./components/LeadList";
 
 function App() {
   const [appState, setAppSate] = useState(true);
-  const [class1, setClass1] = useState("btn btn-primary active");
-  const [class2, setClass2] = useState("btn btn-primary");
+  const [class1, setClass1] = useState("unfocus button act btn");
+  const [class2, setClass2] = useState("unfocus button btn");
   return (
     <div className="container">
-      <div class="btn-group mt-3 mb-2" role="group">
+      <h4 className="mt-2" style={{ textAlign: "center" }}>
+        Lead Management
+      </h4>
+      <div
+        class="btn-group mt-3 mb-2 d-flex justify-content-center"
+        style={{ textAlign: "center" }}
+        role="group"
+      >
         <button
           type="button"
           onClick={() => {
             setAppSate(true);
-            setClass1("btn btn-primary active");
-            setClass2("btn btn-primary ");
-            e.currentTarget.blur();
+            setClass1("unfocus button act btn");
+            setClass2("unfocus button btn");
           }}
           className={class1}
         >
@@ -27,9 +33,8 @@ function App() {
           type="button"
           onClick={() => {
             setAppSate(false);
-            setClass2("btn btn-primary active");
-            setClass1("btn btn-primary");
-            e.currentTarget.blur();
+            setClass2("unfocus button act btn");
+            setClass1("unfocus button btn");
           }}
           class={class2}
         >
