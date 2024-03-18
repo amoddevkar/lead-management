@@ -9,7 +9,7 @@ function App() {
   const [class2, setClass2] = useState("btn btn-primary");
   return (
     <div className="container">
-      <div class="btn-group mt-5 mb-5" role="group">
+      <div class="btn-group mt-3 mb-2" role="group">
         <button
           type="button"
           onClick={() => {

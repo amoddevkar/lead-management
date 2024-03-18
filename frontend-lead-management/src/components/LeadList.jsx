@@ -85,8 +85,6 @@ const LeadList = () => {
 
   return (
     <div>
-      <h2>Leads List</h2>
-
       <TableComponent leads={leads} />
     </div>
   );

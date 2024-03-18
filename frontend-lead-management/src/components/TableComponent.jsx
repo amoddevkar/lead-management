@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const TableComponent = ({ leads }) => {
   const [filter, setFilter] = useState(null);
-  const [filteredLeads, setfiltererdLeads] = useState(leads);
+  const [filteredLeads, setFilteredLeads] = useState(leads);
+  const inputRefCity = useRef(null);
+  const inputRefState = useRef(null);
 
   useEffect(() => {
     const filteredLeads =
@@ -36,12 +38,22 @@ const TableComponent = ({ leads }) => {
             }
           })
         : leads;
-    setfiltererdLeads(filteredLeads);
+    setFilteredLeads(filteredLeads);
     console.log(filter);
   }, [filter]);
 
   return (
     <>
+      <button
+        className="btn btn-secondary"
+        onClick={() => {
+          setFilter(null);
+          inputRefCity.current.value = "";
+          inputRefState.current.value = "";
+        }}
+      >
+        Clear Filter
+      </button>
       <table className="table table-striped">
         <thead>
           <tr>
@@ -61,7 +73,7 @@ const TableComponent = ({ leads }) => {
                 type="text"
                 name="city"
                 onChange={(e) => setFilter({ ...filter, city: e.target.value })}
-                //readOnly
+                ref={inputRefCity}
                 placeholder="City"
                 required
               />
@@ -74,7 +86,7 @@ const TableComponent = ({ leads }) => {
                 onChange={(e) =>
                   setFilter({ ...filter, state: e.target.value })
                 }
-                //readOnly
+                ref={inputRefState}
                 placeholder="State"
                 required
               />
