@@ -48,7 +48,7 @@ const LeadForm = () => {
     console.log("Lead Data:", leadData);
     try {
       const response = await axios.post(
-        "http://localhost:5000/addLead",
+        "https://lead-management-89mt.onrender.com/addLead",
         leadData
       );
       console.log("Lead created:", response.data);

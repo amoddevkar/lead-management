@@ -71,7 +71,9 @@ const LeadList = () => {
   useEffect(() => {
     const fetchLeads = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/leads");
+        const response = await axios.get(
+          "https://lead-management-89mt.onrender.com/leads"
+        );
         setLeads(response.data);
       } catch (error) {
         console.error("Error fetching leads:", error);
